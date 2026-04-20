@@ -13,22 +13,22 @@ Open the local app.
 
 ## What it does
 
-- Server renders one tab: `SKU`
-- Client hydrates with `v-model` still set to `product_sku`
+- Server renders one tab: `Third`
+- Client hydrates with `v-model` still set to `third`
 - Client items are:
-  - `Product Group`
-  - `Category`
-  - `SKU`
+  - `First`
+  - `Second`
+  - `Third`
 
 ## Expected
 
-Only `SKU` should be active after hydration.
+Only `Third` should be active after hydration.
 
 ## Observed
 
 Two tabs become active after hydration:
 
-- `Product Group`
-- `SKU`
+- `First`
+- `Third`
 
 This looks related to [nuxt/ui#5841](https://github.com/nuxt/ui/issues/5841), which points at `:key="index"` in `UTabs`.

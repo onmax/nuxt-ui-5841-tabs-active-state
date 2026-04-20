@@ -7,17 +7,17 @@ type TabItem = {
 }
 
 const root = ref<HTMLElement | null>(null)
-const selectedTab = ref('product_sku')
+const selectedTab = ref('third')
 const domState = ref('')
 
 const firstItems: TabItem[] = [
-  { label: 'SKU', value: 'product_sku' }
+  { label: 'Third', value: 'third' }
 ]
 
 const secondItems: TabItem[] = [
-  { label: 'Product Group', value: 'product_group' },
-  { label: 'Category', value: 'item_category' },
-  { label: 'SKU', value: 'product_sku' }
+  { label: 'First', value: 'first' },
+  { label: 'Second', value: 'second' },
+  { label: 'Third', value: 'third' }
 ]
 
 const items = ref<TabItem[]>(import.meta.server ? firstItems : secondItems)
@@ -53,7 +53,7 @@ onMounted(async () => {
     </p>
 
     <p style="margin-bottom: 24px;">
-      The selected value stays <code>product_sku</code>.
+      The selected value stays <code>third</code>.
     </p>
 
     <UTabs
@@ -67,7 +67,7 @@ onMounted(async () => {
     />
 
     <div style="margin-top: 24px;">
-      <p><strong>Expected:</strong> only SKU should be active after the update.</p>
+      <p><strong>Expected:</strong> only Third should be active after the update.</p>
       <p><strong>Observed:</strong> the selected state can become wrong after the update.</p>
     </div>
 
